@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 const namesRouter = require('./router/names.router');
-
+const messageRouter = require('./router/messages.router');
 
 app.use((req, res, next) => {
     const date = Date.now();
@@ -16,6 +16,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/names', namesRouter);
+app.use('/message', messageRouter);
 
 
 
